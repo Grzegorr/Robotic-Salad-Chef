@@ -360,6 +360,11 @@ def draw_a_multiplied_correlation_matrix_OLD(paths_x, paths_y, labels, title, if
     return XY_corr
 
 
+
+############################################################################################
+#                            CORELATIONS PLOT
+###########################################################################################
+
 def plot_a_lot_of_correlations(hand1_corrs):
     ####Give names to correlations
     hand_to_hand_corr = hand1_corrs[0]
@@ -409,6 +414,109 @@ def plot_correlation_ingredients_and_orange(hand1_corrs):
     plt.title("Correlations between object pairs computed for short windows.")
     plt.legend()
     plt.show()
+
+
+def plot_correlation_ingredients_and_knife(hand1_corrs):
+    ####Give names to correlations
+    hand_to_banana_corr = hand1_corrs[1]
+    hand_to_apple_corr = hand1_corrs[2]
+    hand_to_orange_corr = hand1_corrs[4]
+    hand_to_broccoli_corr = hand1_corrs[5]
+    hand_to_carrot_corr = hand1_corrs[6]
+    hand_to_knife_corr = hand1_corrs[7]
+
+    plt.plot(hand_to_carrot_corr, "r-", label="Hand to Carrot Corr")
+    plt.plot(hand_to_banana_corr, "y-", label="Hand to Banana Corr")
+    plt.plot(hand_to_apple_corr, "pink", label="Hand to Apple Corr")
+    plt.plot(hand_to_orange_corr, "orange", label="Hand to Orange Corr")
+    plt.plot(hand_to_broccoli_corr, "g-", label="Hand to Broccoli Corr")
+    plt.plot(hand_to_knife_corr, "b-", label="Hand to Knife Corr")
+
+    plt.ylabel('Correlation Value')
+    plt.xlabel("Window Number")
+    plt.title("Correlations between right hand and objects relevant to recipe.")
+    plt.legend(loc = 'lower right')
+    plt.show()
+
+
+
+
+
+
+
+def plot_correlation_knife_and_apple(hand1_corrs):
+    ####Give names to correlations
+    hand_to_knife_corr = hand1_corrs[7]
+    hand_to_apple_corr = hand1_corrs[2]
+
+    plt.plot(hand_to_apple_corr, "r-", label="Hand to Apple Corr")
+    plt.plot(hand_to_knife_corr, "b-.", label="Hand to Knife Corr")
+
+    plt.ylabel('Correlation Value')
+    plt.xlabel("Window NUmber")
+    plt.title("Correlations between object pairs computed for short windows.")
+    plt.legend()
+    plt.show()
+
+def plot_correlation_knife_and_orange(hand1_corrs):
+    ####Give names to correlations
+    hand_to_knife_corr = hand1_corrs[7]
+    hand_to_orange_corr = hand1_corrs[4]
+
+    plt.plot(hand_to_orange_corr, "o-", label="Hand to Orange Corr")
+    plt.plot(hand_to_knife_corr, "b-.", label="Hand to Knife Corr")
+
+    plt.ylabel('Correlation Value')
+    plt.xlabel("Window NUmber")
+    plt.title("Correlations between object pairs computed for short windows.")
+    plt.legend()
+    plt.show()
+
+def plot_correlation_knife_and_banana(hand1_corrs):
+    ####Give names to correlations
+    hand_to_knife_corr = hand1_corrs[7]
+    hand_to_banana_corr = hand1_corrs[1]
+
+    plt.plot(hand_to_banana_corr, "y-", label="Hand to Banana Corr")
+    plt.plot(hand_to_knife_corr, "b-.", label="Hand to Knife Corr")
+
+    plt.ylabel('Correlation Value')
+    plt.xlabel("Window NUmber")
+    plt.title("Correlations between object pairs computed for short windows.")
+    plt.legend()
+    plt.show()
+
+def plot_correlation_knife_and_brocoli(hand1_corrs):
+    ####Give names to correlations
+    hand_to_knife_corr = hand1_corrs[7]
+    hand_to_brocoli_corr = hand1_corrs[5]
+
+    plt.plot(hand_to_brocoli_corr, "g-", label="Hand to Brocoli Corr")
+    plt.plot(hand_to_knife_corr, "b-.", label="Hand to Knife Corr")
+
+    plt.ylabel('Correlation Value')
+    plt.xlabel("Window NUmber")
+    plt.title("Correlations between object pairs computed for short windows.")
+    plt.legend()
+    plt.show()
+
+def plot_correlation_knife_and_carrot(hand1_corrs):
+    ####Give names to correlations
+    hand_to_knife_corr = hand1_corrs[7]
+    hand_to_carrot_corr = hand1_corrs[6]
+
+    plt.plot(hand_to_carrot_corr, "r-", label="Hand to Carrot Corr")
+    plt.plot(hand_to_knife_corr, "b-.", label="Hand to Knife Corr")
+
+    plt.ylabel('Correlation Value')
+    plt.xlabel("Window NUmber")
+    plt.title("Correlations between object pairs computed for short windows.")
+    plt.legend()
+    plt.show()
+
+
+
+
 
 def plot_correlation_bottle_and_apple(hand1_corrs):
     ####Give names to correlations

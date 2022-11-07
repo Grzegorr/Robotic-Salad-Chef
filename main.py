@@ -7,10 +7,10 @@ import torch
 
 if True:
     # Model
-    YOLO = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
+    YOLO = torch.hub.load('ultralytics/yolov5', 'yolov5m', pretrained=True)
 
     # Videos
-    names = ['BottleAndApple2'] ###put one name only, sorry
+    names = ['CarrotTuning'] ###put one name only, sorry
     processed_video_name = names[0] + "_processed.mp4"
     results_YOLO = []
     results_YOLO_JSON = []
