@@ -1,6 +1,6 @@
 from UtilityFunctions import *
 
-name = "MessyKitchen1"
+name = "FinalSalad18"
 
 ### Fill in the no detections
 replace_padding_with_prevous_value_hands(name)
@@ -17,7 +17,6 @@ print(len(correlations[0]))
 
 #Ingredients and knife
 plot_correlation_ingredients_and_knife(correlations)
-
 #Other
 #plot_a_lot_of_correlations(correlations)
 #plot_correlation_ingredients_and_orange(correlations)

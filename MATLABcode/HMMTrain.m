@@ -16,7 +16,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 threshold = 0.6;
 
-correlations = readNPY('MessyKitchen1.npy');
+correlations = readNPY('Correlations/FinalSalad14.npy');
 size(correlations);
 correlations(1,:);
 
@@ -64,8 +64,23 @@ seq;
 %%%          READING IN STATES             %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+states = readNPY('GroundTruth/FinalSalad14_GTstates.npy');
+states;
+
 
 
 [TRANS,EMIT] = hmmestimate(seq,states);
 TRANS
 EMIT
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               SAVE DATA                %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+save('LastTraining.mat', 'TRANS', 'EMIT');
+clear
+
+
+
+

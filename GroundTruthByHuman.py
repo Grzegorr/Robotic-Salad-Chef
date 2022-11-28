@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-name = "MessyKitchen1"
+name = "FinalSalad5"
 
 cap = cv2.VideoCapture(name + ".mp4")
 
@@ -21,7 +21,7 @@ while (cap.isOpened()):
         cv2.imshow('Frame', frame)
 
         # Press Q on keyboard to  exit
-        if cv2.waitKey(25) & 0xFF == ord('q'):
+        if cv2.waitKey(5) & 0xFF == ord('q'):
             break
 
         frame_no = frame_no + 1
