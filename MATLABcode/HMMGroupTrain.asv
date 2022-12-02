@@ -11,8 +11,8 @@
 %EMMISIONS - what correlations say
 
 % Files with extracted correlations and Ground Truth
-correlation_files = ["Correlations/FinalSalad1.npy", "Correlations/FinalSalad14.npy"];
-GT_files = ["GroundTruth/FinalSalad1_GTstates.npy", "GroundTruth/FinalSalad14_GTstates.npy"];
+correlation_files = ["Correlations/FinalSalad1.npy", "Correlations/FinalSalad3.npy", "Correlations/FinalSalad4.npy", "Correlations/FinalSalad5.npy", "Correlations/FinalSalad6.npy", "Correlations/FinalSalad7.npy", "Correlations/FinalSalad8.npy", "Correlations/FinalSalad11.npy", "Correlations/FinalSalad12.npy", "Correlations/FinalSalad14.npy"];
+GT_files = ["GroundTruth/FinalSalad1_GTstates.npy", "GroundTruth/FinalSalad3_GTstates.npy", "GroundTruth/FinalSalad4_GTstates.npy", "GroundTruth/FinalSalad5_GTstates.npy", "GroundTruth/FinalSalad6_GTstates.npy", "GroundTruth/FinalSalad7_GTstates.npy", "GroundTruth/FinalSalad8_GTstates.npy", "GroundTruth/FinalSalad14_GTstates.npy"];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   READING IN EMMISSIONS                %%%%
@@ -73,14 +73,10 @@ seq;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 states = [];
 
-states = readNPY('GroundTruth/FinalSalad14_GTstates.npy');
-states;
-
-
 for file = GT_files
 states_single = readNPY(file);
-states = [states, states_single];
-size(correlations)
+states = [states, states_single'];
+size(states)
 end
 
 
