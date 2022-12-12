@@ -12,32 +12,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%           MOCK EXAMPLE                 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-trans = [0.88 0.02 0.02 0.02 0.02 0.02 0.02
-        0.02 0.88 0.02 0.02 0.02 0.02 0.02
-        0.02 0.02 0.88 0.02 0.02 0.02 0.02
-        0.02 0.02 0.02 0.88 0.02 0.02 0.02
-        0.02 0.02 0.02 0.02 0.88 0.02 0.02
-        0.02 0.02 0.02 0.02 0.02 0.88 0.02
-        0.02 0.02 0.02 0.02 0.02 0.02 0.88];
-    
-emit = [0.7 0.05 0.05 0.05 0.05 0.05 0.05
-        0.05 0.7 0.05 0.05 0.05 0.05 0.05
-        0.05 0.05 0.7 0.05 0.05 0.05 0.05
-        0.05 0.05 0.05 0.7 0.05 0.05 0.05
-        0.05 0.05 0.05 0.05 0.7 0.05 0.05
-        0.05 0.05 0.05 0.05 0.05 0.7 0.05
-        0.05 0.05 0.05 0.05 0.05 0.05 0.7];
-
-seq = [1 1 1 1 1 1 1 1 5 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 5 2 2 2 2 7 7 7 7 7 7 7 7 3 7 7 7 7 7 7 7 7 1 1 1 1 1 1 1 2 1 1 1 1 5 5 5 5 5 5 5 5 1 5 1 5 5 5 1 1 1 7 7 7 7 7 1 7 7 7 7 7 1 1 7 7 7 7 7 7 7 7 1 1 1 1 1 1 1 1];
-
-estimatedStates = hmmviterbi(seq,trans,emit);
-estimatedStates;
+% trans = [0.88 0.02 0.02 0.02 0.02 0.02 0.02
+%         0.02 0.88 0.02 0.02 0.02 0.02 0.02
+%         0.02 0.02 0.88 0.02 0.02 0.02 0.02
+%         0.02 0.02 0.02 0.88 0.02 0.02 0.02
+%         0.02 0.02 0.02 0.02 0.88 0.02 0.02
+%         0.02 0.02 0.02 0.02 0.02 0.88 0.02
+%         0.02 0.02 0.02 0.02 0.02 0.02 0.88];
+%     
+% emit = [0.7 0.05 0.05 0.05 0.05 0.05 0.05
+%         0.05 0.7 0.05 0.05 0.05 0.05 0.05
+%         0.05 0.05 0.7 0.05 0.05 0.05 0.05
+%         0.05 0.05 0.05 0.7 0.05 0.05 0.05
+%         0.05 0.05 0.05 0.05 0.7 0.05 0.05
+%         0.05 0.05 0.05 0.05 0.05 0.7 0.05
+%         0.05 0.05 0.05 0.05 0.05 0.05 0.7];
+% 
+% seq = [1 1 1 1 1 1 1 1 5 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 5 2 2 2 2 7 7 7 7 7 7 7 7 3 7 7 7 7 7 7 7 7 1 1 1 1 1 1 1 2 1 1 1 1 5 5 5 5 5 5 5 5 1 5 1 5 5 5 1 1 1 7 7 7 7 7 1 7 7 7 7 7 1 1 7 7 7 7 7 7 7 7 1 1 1 1 1 1 1 1];
+% 
+% estimatedStates = hmmviterbi(seq,trans,emit);
+% estimatedStates;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   USE LAST TRAINING TO ESTIMATE        %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-salad_number = ['14'];
+salad_number = ['15'];
 load('LastTraining.mat')
+EMIT
+TRANS
 
 %%%   READING IN EMMISSIONS
 threshold = 0.6;
@@ -151,6 +153,45 @@ end
 
 commands
 
+%Filling in confusion matrix
+%GT - ground truth
+%seq - before markov
+%estimated staes - after markov
 
+confusion_before_markov = [
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    ];
+
+confusion_after_markov = [
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    ];
+
+no_entries = size(GT);
+no_entries = no_entries(1);
+for n = 1:no_entries
+    
+    GT_current = GT(n);
+    seq_current = seq(n);
+    predicted_current = estimatedStates(n);
+    
+    confusion_before_markov(GT_current,seq_current) = confusion_before_markov(GT_current,seq_current) + 1;
+    confusion_after_markov(GT_current,predicted_current) = confusion_after_markov(GT_current,predicted_current) + 1;
+    
+end
+
+confusion_before_markov
+confusion_after_markov
 
     

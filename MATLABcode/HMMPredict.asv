@@ -36,7 +36,7 @@ estimatedStates;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   USE LAST TRAINING TO ESTIMATE        %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-salad_number = ['14'];
+salad_number = ['18'];
 load('LastTraining.mat')
 
 %%%   READING IN EMMISSIONS
@@ -150,6 +150,29 @@ for state = estimatedStates
 end
 
 commands
+
+%Filling in confusion matrix
+%GT - ground truth
+%seq - before markov
+%estimated staes - after markov
+
+confusion = [
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    0 0 0 0 0 0 0 
+    ];
+
+no_entries = size(GT);
+no_entries = no_entries(1);
+for n = 1:no_entries
+    %first do before filtering
+    GT_current = GT(n)
+    seq_current = seq(n)
+end
 
 
 

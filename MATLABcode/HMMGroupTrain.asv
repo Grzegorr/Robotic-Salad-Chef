@@ -11,8 +11,11 @@
 %EMMISIONS - what correlations say
 
 % Files with extracted correlations and Ground Truth
-correlation_files = ["Correlations/FinalSalad1.npy", "Correlations/FinalSalad3.npy", "Correlations/FinalSalad4.npy", "Correlations/FinalSalad5.npy", "Correlations/FinalSalad6.npy", "Correlations/FinalSalad7.npy", "Correlations/FinalSalad8.npy", "Correlations/FinalSalad11.npy", "Correlations/FinalSalad12.npy", "Correlations/FinalSalad14.npy"];
-GT_files = ["GroundTruth/FinalSalad1_GTstates.npy", "GroundTruth/FinalSalad3_GTstates.npy", "GroundTruth/FinalSalad4_GTstates.npy", "GroundTruth/FinalSalad5_GTstates.npy", "GroundTruth/FinalSalad6_GTstates.npy", "GroundTruth/FinalSalad7_GTstates.npy", "GroundTruth/FinalSalad8_GTstates.npy", "GroundTruth/FinalSalad14_GTstates.npy"];
+correlation_files = ["Correlations/FinalSalad1.npy", "Correlations/FinalSalad2.npy", "Correlations/FinalSalad3.npy", "Correlations/FinalSalad4.npy", "Correlations/FinalSalad5.npy", "Correlations/FinalSalad6.npy", "Correlations/FinalSalad7.npy", "Correlations/FinalSalad8.npy"];
+GT_files = ["GroundTruth/FinalSalad1_GTstates.npy", "GroundTruth/FinalSalad2_GTstates.npy", "GroundTruth/FinalSalad3_GTstates.npy", "GroundTruth/FinalSalad4_GTstates.npy", "GroundTruth/FinalSalad5_GTstates.npy", "GroundTruth/FinalSalad6_GTstates.npy", "GroundTruth/FinalSalad7_GTstates.npy", "GroundTruth/FinalSalad8_GTstates.npy"];
+
+%correlation_files = ["Correlations/FinalSalad11.npy", "Correlations/FinalSalad12.npy", "Correlations/FinalSalad13.npy", "Correlations/FinalSalad14.npy", "Correlations/FinalSalad15.npy", "Correlations/FinalSalad16.npy", "Correlations/FinalSalad17.npy", "Correlations/FinalSalad18.npy"];
+%GT_files = ["GroundTruth/FinalSalad11_GTstates.npy", "GroundTruth/FinalSalad12_GTstates.npy", "GroundTruth/FinalSalad13_GTstates.npy", "GroundTruth/FinalSalad14_GTstates.npy", "GroundTruth/FinalSalad15_GTstates.npy", "GroundTruth/FinalSalad16_GTstates.npy", "GroundTruth/FinalSalad17_GTstates.npy", "GroundTruth/FinalSalad18_GTstates.npy"];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   READING IN EMMISSIONS                %%%%

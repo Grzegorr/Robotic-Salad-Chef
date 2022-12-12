@@ -1,6 +1,6 @@
 from UtilityFunctions import *
 
-name = "FinalSalad18"
+name = "FinalSalad13"
 
 ### Fill in the no detections
 replace_padding_with_prevous_value_hands(name)
