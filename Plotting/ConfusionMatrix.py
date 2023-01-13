@@ -46,6 +46,9 @@ batch2_after_markov = [
 before_markov = np.add(np.array(batch1_before_markov), np.array(batch2_before_markov))
 after_markov = np.add(np.array(batch1_after_markov), np.array(batch2_after_markov))
 
+before_markov = before_markov.transpose()
+after_markov = after_markov.transpose()
+
 
 
 
@@ -61,11 +64,14 @@ after_markov = np.add(np.array(batch1_after_markov), np.array(batch2_after_marko
 #]
 #print(confusion_matrix)
 
-labels = ["Nothing", "Broccoli", "Carrot", "Apple", "Banana", "Orange", "Knife"]
-plt.figure(figsize=(12, 8))
-plt.title("Handled Object Identification Confusion Matrix after Pearsons Correlation")
-sns.heatmap(before_markov, fmt = "d", vmax = 100, annot = True, xticklabels = labels, yticklabels = labels)
-plt.tick_params(axis='both', which='major', labelsize=10, labelbottom=False, bottom=False, top=False, labeltop=True)
+labels = ["Nothing", "Banana", "Apple", "Orange", "Broccoli", "Carrot", "Knife"]
+plt.figure(figsize=(14, 10))
+plt.title("Handled Object Identification Confusion Matrix before HMM filtering", fontsize = 19, y = 1.08)
+heat = sns.heatmap(before_markov, fmt = "d", vmax = 100, annot = True, xticklabels = labels, yticklabels = labels)
+heat.set_xlabel("Ground Truth for Item Handled", fontsize = 15)
+heat.set_ylabel("Prediction for Item Handled before HMM", fontsize = 15)
+heat.xaxis.set_label_position('top')
+plt.tick_params(axis='both', which='major', labelsize=13, labelbottom=False, bottom=False, top=False, labeltop=True)
 plt.show()
 
 
@@ -83,9 +89,12 @@ plt.show()
 #print(confusion_matrix)
 
 
-labels = ["Nothing", "Broccoli", "Carrot", "Apple", "Banana", "Orange", "Knife"]
-plt.figure(figsize=(12, 8))
-plt.title("Handled Object Identification Confusion Matrix - HMM filtered")
-sns.heatmap(after_markov, fmt = "d", vmax = 100, annot = True, xticklabels = labels, yticklabels = labels)
-plt.tick_params(axis='both', which='major', labelsize=10, labelbottom=False, bottom=False, top=False, labeltop=True)
+labels = ["Nothing", "Banana", "Apple", "Orange", "Broccoli", "Carrot", "Knife"]
+plt.figure(figsize=(14, 10))
+plt.title("Handled Object Identification Confusion Matrix - HMM filtered", fontsize = 19, y = 1.08)
+heat = sns.heatmap(after_markov, fmt = "d", vmax = 100, annot = True, xticklabels = labels, yticklabels = labels)
+heat.set_xlabel("Ground Truth for Item Handled", fontsize = 15)
+heat.set_ylabel("Prediction for Item Handled after HMM", fontsize = 15)
+heat.xaxis.set_label_position('top')
+plt.tick_params(axis='both', which='major', labelsize=13, labelbottom=False, bottom=False, top=False, labeltop=True)
 plt.show()
