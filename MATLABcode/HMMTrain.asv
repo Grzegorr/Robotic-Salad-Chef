@@ -16,7 +16,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 threshold = 0.6;
 
-correlations = readNPY('MessyKitchen1.npy');
+correlations = readNPY('Correlations/FinalSalad14.npy');
 size(correlations);
 correlations(1,:);
 
@@ -28,7 +28,7 @@ broccoli_corr = correlations(6,:);
 carrot_corr = correlations(7,:);
 knife_corr = correlations(8,:);
 
-% analogue correlation to 
+% analogue correlation to binary correlation
 seq = [];
 length = size(banana_corr);
 length = length(2);
@@ -36,19 +36,19 @@ for i = 1:length
     number = 999;
     maximum = max([banana_corr(i) apple_corr(i) orange_corr(i) broccoli_corr(i) carrot_corr(i) knife_corr(i)]);
     if maximum == banana_corr(i)
-        number = 2;
-    end
-    if maximum == apple_corr(i)
-        number = 3;
-    end
-    if maximum == orange_corr(i)
-        number = 4;
-    end
-    if maximum == broccoli_corr(i)
         number = 5;
     end
-    if maximum == carrot_corr(i)
+    if maximum == apple_corr(i)
+        number = 4;
+    end
+    if maximum == orange_corr(i)
         number = 6;
+    end
+    if maximum == broccoli_corr(i)
+        number = 2;
+    end
+    if maximum == carrot_corr(i)
+        number = 3;
     end
     if maximum == knife_corr(i)
         number = 7;
@@ -56,16 +56,33 @@ for i = 1:length
     if maximum < threshold
         number = 1;
     end   
-    states = [states number];
-end
-states;
+        seq = [seq number];
+    end
+    seq = [seq number];
+
+seq;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%          READING IN STATES             %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+states = readNPY('GroundTruth/FinalSalad14_GTstates.npy');
+states;
 
 
 
 [TRANS,EMIT] = hmmestimate(seq,states);
 TRANS
 EMIT
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%               SAVE DATA                %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+save('LastTraining.mat', 'TRANS', 'EMIT');
+clear
+
+
+
+

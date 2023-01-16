@@ -10,6 +10,7 @@ function [vectors] = HMMPrediction_Iter(salad_number)
        [commands, vector] = HMMPrediction(salad_number, point);
        vectors = [vectors;vector];
     end
+    vectors
 
 
 end

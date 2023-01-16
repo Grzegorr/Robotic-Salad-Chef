@@ -22,7 +22,6 @@ clear
 
 %Step 1.
 TrainingSalads = ["1", "2", "3", "4", "5", "6", "7", "8"];
-%TrainingSalads = ["11", "12", "13", "14", "15", "16", "17", "18"];
 PredictedSalad = '12';
 [TRANS, EMIT] = HMMEstimation(TrainingSalads);
 
@@ -147,19 +146,17 @@ end
 
 figure(2)
 hold on
-title('Similarity between actions of observed human and known recipes', 'FontSize', 12, 'FontWeight', 'bold')
+title('Similarity between actions of observed human and known recipes.')
 plot(Recipe1_cosSim, "LineWidth", 3)
-plot(Recipe2_cosSim, "LineWidth", 5)
+plot(Recipe2_cosSim, "LineWidth", 3)
 plot(Recipe3_cosSim, "LineWidth", 3)
 plot(Recipe4_cosSim, "LineWidth", 3)
 plot(Recipe5_cosSim, "LineWidth", 3)
 plot(Recipe6_cosSim, "LineWidth", 3)
 plot(Recipe7_cosSim, "LineWidth", 3)
 plot(Recipe8_cosSim, "LineWidth", 3)
-ax = gca; 
-ax.FontSize = 12;
-xlabel("Time since begining of preparation[24s steps]", 'FontSize', 12, 'FontWeight', 'bold')
-ylabel("Cosine Similarity with Recipes", 'FontSize', 12, 'FontWeight', 'bold')
+xlabel("Time since begining of preparation[24s steps]")
+ylabel("Cosine Similarity with Recipes")
 legend('Recipe 1','Recipe 2','Recipe 3','Recipe 4','Recipe 5','Recipe 6','Recipe 7','Recipe 8', location = "southwest")
 
 TRANS
