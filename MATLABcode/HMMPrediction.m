@@ -10,6 +10,8 @@
 
 function [commands,vector] = HMMPrediction(salad_number,stop_point)
 
+if_plot = 1;
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%   USE LAST TRAINING TO ESTIMATE        %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,49 +73,54 @@ function [commands,vector] = HMMPrediction(salad_number,stop_point)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     %%% LOAD GT for plotting only
-    GT = readNPY(['GroundTruth/FinalSalad', salad_number, '_GTstates.npy']);
-    %%%Schuffling GT so it fits the correct state numbering
-    GT;
-    GT(1);
-    newGT = [];
-    for u = 1:size(GT)
-        u;
-        new_u = 999;
-        if GT(u) == 1
-            new_u = 1;
+    if if_plot == 1
+        GT = readNPY(['GroundTruth/FinalSalad', salad_number, '_GTstates.npy']);
+        %%%Schuffling GT so it fits the correct state numbering
+        GT;
+        GT(1);
+        newGT = [];
+        for u = 1:size(GT)
+            u;
+            new_u = 999;
+            if GT(u) == 1
+                new_u = 1;
+            end
+            if GT(u) == 2
+                new_u = 5;
+            end
+            if GT(u) == 3
+                new_u = 4;
+            end
+            if GT(u) == 4
+                new_u = 6;
+            end
+            if GT(u) == 5
+                new_u = 2;
+            end
+            if GT(u) == 6
+                new_u = 3;
+            end
+            if GT(u) == 7
+                new_u = 7;
+            end
+            newGT = [newGT new_u];
         end
-        if GT(u) == 2
-            new_u = 5;
-        end
-        if GT(u) == 3
-            new_u = 4;
-        end
-        if GT(u) == 4
-            new_u = 6;
-        end
-        if GT(u) == 5
-            new_u = 2;
-        end
-        if GT(u) == 6
-            new_u = 3;
-        end
-        if GT(u) == 7
-            new_u = 7;
-        end
-        newGT = [newGT new_u];
-    end
-    GT = newGT
+        GT = newGT
     
-    figure(1)
-    title('Correlations and Markov Filtered Corrleations')
-    plot(estimatedStates(1:stop_point), '-b')
-    xlabel("Correlation Window")
-    ylabel("State no.")
-    hold on
-    plot(seq(1:stop_point), 'xr')
-    plot(GT(1:stop_point), 'og')
-    legend('HMM estimation','Correlation Detection','Ground Truth')
-    hold off
+        figure(1)
+        set(gcf,'position',[15,10,1400,480])
+        title('Correlations and Markov Filtered Corrleations')
+        plot(estimatedStates(1:stop_point), '-b', "LineWidth", 3)
+        xlabel("Correlation Window", 'FontSize', 12, 'FontWeight', 'bold')
+        ylabel("State no.", 'FontSize', 12, 'FontWeight', 'bold')
+        hold on
+        plot(GT(1:stop_point), '--g', "LineWidth", 2.5)
+        plot(seq(1:stop_point), 'xr', "LineWidth", 1.5)
+        ax = gca; 
+        ax.FontSize = 12;
+        legend('HMM estimation','Correlation Detection','Ground Truth', location = "southeast")
+        hold off
+    end
 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

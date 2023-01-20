@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-name = "FinalSalad18"
+name = "GrandFinale_ACACAC"
 
 cap = cv2.VideoCapture(name + ".mp4")
 

@@ -1,3 +1,5 @@
+clc;
+clear;
 %THIS SCRIPT PRODUCES THE PLOT WHERE ONE OF DEONSTRATION IS COMPARED
 %AGAINST ALL THE RECIPES
 
@@ -21,9 +23,11 @@
 clear
 
 %Step 1.
-TrainingSalads = ["1", "2", "3", "4", "5", "6", "7", "8"];
-%TrainingSalads = ["11", "12", "13", "14", "15", "16", "17", "18"];
-PredictedSalad = '12';
+%TrainingSalads = ["1", "2", "3", "4", "5", "6", "7", "8"];
+TrainingSalads = ["11", "12", "13", "14", "15", "16", "17", "18"];
+%TrainingSalads = ["1", "2", "3", "4", "5", "6", "7", "8", "11", "12", "13", "14", "15", "16", "17", "18"];
+%PredictedSalad = '12';
+PredictedSalad = '8';
 [TRANS, EMIT] = HMMEstimation(TrainingSalads);
 
 %Step 2.
@@ -147,9 +151,13 @@ end
 
 figure(2)
 hold on
-title('Similarity between actions of observed human and known recipes', 'FontSize', 12, 'FontWeight', 'bold')
-plot(Recipe1_cosSim, "LineWidth", 3)
-plot(Recipe2_cosSim, "LineWidth", 5)
+set(gcf,'position',[15,10,650,480])
+%title('Similarity between actions of observed human and known recipes', 'FontSize', 12, 'FontWeight', 'bold')
+%title("Intention Estimation for Recepie 1 with Triple Portion" + newline + "and One Undetected Ingredient", 'FontSize', 12, 'FontWeight', 'bold')
+%title("Intention Estimation for Recepie 1 with Triple Portion" + newline + "and All Apples Added before Carrot", 'FontSize', 12, 'FontWeight', 'bold')
+title("Intention Estimation for Recepie 1 with Triple Portion" + newline + "and Orange Added as Mistake", 'FontSize', 12, 'FontWeight', 'bold')
+plot(Recipe1_cosSim, "LineWidth", 5)
+plot(Recipe2_cosSim, "LineWidth", 3)
 plot(Recipe3_cosSim, "LineWidth", 3)
 plot(Recipe4_cosSim, "LineWidth", 3)
 plot(Recipe5_cosSim, "LineWidth", 3)
@@ -160,7 +168,7 @@ ax = gca;
 ax.FontSize = 12;
 xlabel("Time since begining of preparation[24s steps]", 'FontSize', 12, 'FontWeight', 'bold')
 ylabel("Cosine Similarity with Recipes", 'FontSize', 12, 'FontWeight', 'bold')
-legend('Recipe 1','Recipe 2','Recipe 3','Recipe 4','Recipe 5','Recipe 6','Recipe 7','Recipe 8', location = "southwest")
+legend('Recipe 1','Recipe 2','Recipe 3','Recipe 4','Recipe 5','Recipe 6','Recipe 7','Recipe 8', location = "southeast")
 
-TRANS
-EMIT
+TRANS;
+EMIT;
