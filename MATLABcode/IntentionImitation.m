@@ -27,7 +27,7 @@ clear
 TrainingSalads = ["11", "12", "13", "14", "15", "16", "17", "18"];
 %TrainingSalads = ["1", "2", "3", "4", "5", "6", "7", "8", "11", "12", "13", "14", "15", "16", "17", "18"];
 %PredictedSalad = '12';
-PredictedSalad = '8';
+PredictedSalad = '12';
 [TRANS, EMIT] = HMMEstimation(TrainingSalads);
 
 %Step 2.
