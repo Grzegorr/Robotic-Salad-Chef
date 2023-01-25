@@ -4,6 +4,7 @@ import os
 import sys
 import json
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
@@ -425,17 +426,21 @@ def plot_correlation_ingredients_and_knife(hand1_corrs):
     hand_to_carrot_corr = hand1_corrs[6]
     hand_to_knife_corr = hand1_corrs[7]
 
-    plt.plot(hand_to_carrot_corr, "r-", label="Hand to Carrot Corr")
-    plt.plot(hand_to_banana_corr, "y-", label="Hand to Banana Corr")
-    plt.plot(hand_to_apple_corr, "pink", label="Hand to Apple Corr")
-    plt.plot(hand_to_orange_corr, "orange", label="Hand to Orange Corr")
-    plt.plot(hand_to_broccoli_corr, "g-", label="Hand to Broccoli Corr")
+    plt.rc('xtick', labelsize=12)
+    plt.rc('ytick', labelsize=12)
+
+    plt.plot(hand_to_carrot_corr, "r-", label="Hand to Carrot")
+    plt.plot(hand_to_banana_corr, "y-", label="Hand to Banana")
+    plt.plot(hand_to_apple_corr, "pink", label="Hand to Apple")
+    plt.plot(hand_to_orange_corr, "orange", label="Hand to Orange")
+    plt.plot(hand_to_broccoli_corr, "g-", label="Hand to Broccoli")
     plt.plot(hand_to_knife_corr, "b-", label="Hand to Knife Corr")
 
-    plt.ylabel('Correlation Value')
-    plt.xlabel("Window Number")
-    plt.title("Correlations between right hand and objects relevant to recipe.")
-    plt.legend(loc = 'lower right')
+    plt.ylabel('Correlation Value', fontsize = 14)
+    plt.xlabel("Window Number", fontsize = 14)
+    plt.title("Correlations between right hand and objects\nrelevant to recipe.", fontsize = 16)
+    #plt.legend(loc = 'lower right')
+    plt.legend(loc = 'lower right', prop=dict(weight='bold'))
     plt.show()
 
 

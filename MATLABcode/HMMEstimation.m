@@ -3,12 +3,13 @@
 %Takes in an array of numbers which are salad numbers
 
 %States AND emissions meaning:
+%STATES IN THIS FILE WERE CHANGED TO FOLLOW EXPERIMENT PROTOCOL MORE:
 %1 - nothing
-%2 - banana
-%3 - applecorrelations
-%4 - orange
-%5 - brocoli
-%6 - carrot
+%2 - brocoli
+%3 - carrot
+%4 - apple
+%5 - banana
+%6 - orange
 %7 - knife
 
 %STATES - human ground truth
@@ -61,19 +62,19 @@ length = length(2);
 for i = 1:length
     number = 999;
     maximum = max([banana_corr(i) apple_corr(i) orange_corr(i) broccoli_corr(i) carrot_corr(i) knife_corr(i)]);
-    if maximum == banana_corr(i)
+    if maximum == broccoli_corr(i)
         number = 2;
     end
-    if maximum == apple_corr(i)
+    if maximum == carrot_corr(i)
         number = 3;
     end
-    if maximum == orange_corr(i)
+    if maximum == apple_corr(i)
         number = 4;
     end
-    if maximum == broccoli_corr(i)
+    if maximum == banana_corr(i)
         number = 5;
     end
-    if maximum == carrot_corr(i)
+    if maximum == orange_corr(i)
         number = 6;
     end
     if maximum == knife_corr(i)
@@ -102,6 +103,39 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%               TRAINING                 %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%Schuffling states so it fits the correct state numbering
+
+new_states = [];
+state_size_before = size(states)
+for u = 1:state_size_before(2)
+    new_state = 999;
+    if states(u) == 1
+        new_state = 1;
+    end
+    if states(u) == 2
+        new_state = 5;
+    end
+    if states(u) == 3
+        new_state = 4;
+    end
+    if states(u) == 4
+        new_state = 6;
+    end
+    if states(u) == 5
+        new_state = 2;
+    end
+    if states(u) == 6
+        new_state = 3;
+    end
+    if states(u) == 7
+        new_state = 7;
+    end
+    new_states = [new_states new_state];
+end
+    states = new_states;
+    state_size = size(states)
+    seq_size = size(seq)
 
 [TRANS,EMIT] = hmmestimate(seq,states);
 

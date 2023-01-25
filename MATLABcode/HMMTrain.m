@@ -36,19 +36,19 @@ for i = 1:length
     number = 999;
     maximum = max([banana_corr(i) apple_corr(i) orange_corr(i) broccoli_corr(i) carrot_corr(i) knife_corr(i)]);
     if maximum == banana_corr(i)
-        number = 2;
-    end
-    if maximum == apple_corr(i)
-        number = 3;
-    end
-    if maximum == orange_corr(i)
-        number = 4;
-    end
-    if maximum == broccoli_corr(i)
         number = 5;
     end
-    if maximum == carrot_corr(i)
+    if maximum == apple_corr(i)
+        number = 4;
+    end
+    if maximum == orange_corr(i)
         number = 6;
+    end
+    if maximum == broccoli_corr(i)
+        number = 2;
+    end
+    if maximum == carrot_corr(i)
+        number = 3;
     end
     if maximum == knife_corr(i)
         number = 7;
