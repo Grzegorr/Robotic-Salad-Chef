@@ -1,3 +1,6 @@
+#import our functions
+from FryCutterOpenClose import *
+
 from pyfirmata import Arduino,SERVO, util
 import serial
 from subprocess import call
@@ -8,9 +11,6 @@ from time import sleep
 import time
 import pyfirmata
 
-
-#import our functions
-from FryCutterOpenClose import *
 
 
 
