@@ -31,6 +31,21 @@ if_plot = 1;
     broccoli_corr = correlations(6,:);
     carrot_corr = correlations(7,:);
     knife_corr = correlations(8,:);
+    
+    
+    figure(1)
+    set(gcf,'position',[15,10,1400,480])
+    title('Correlations and Markov Filtered Corrleations')
+    plot(estimatedStates(1:stop_point), '-b', "LineWidth", 3)
+    xlabel("Correlation Window", 'FontSize', 12, 'FontWeight', 'bold')
+    ylabel("State no.", 'FontSize', 12, 'FontWeight', 'bold')
+    hold on
+    plot(GT(1:stop_point), '--g', "LineWidth", 2.5)
+    plot(seq(1:stop_point), 'xr', "LineWidth", 1.5)
+    ax = gca; 
+    ax.FontSize = 12;
+    legend('HMM estimation','Correlation Detection','Ground Truth', location = "southeast")
+    hold off
 
     % analogue correlation to binary correlation
     seq = [];

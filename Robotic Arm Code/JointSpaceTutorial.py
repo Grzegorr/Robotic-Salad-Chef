@@ -21,3 +21,8 @@ pos_j = rtde_r.getActualQ()
 #Move in joint position
 rtde_c.moveJ(pos_j)
 
+
+
+
+
+
