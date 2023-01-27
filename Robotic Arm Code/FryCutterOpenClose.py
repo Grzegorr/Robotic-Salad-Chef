@@ -1,4 +1,4 @@
-def Fry_Open():
+def FryOpen():
     Home_pos()
 
     pospf00 = [0.32563449264740296,
@@ -141,7 +141,7 @@ def Fry_Open():
 # ------------------ Closing  the FryCutter ----------------------
 # ..................................................................
 
-def Fry_close():
+def FryClose():
     # close_griper()
     Home_pos()
 
