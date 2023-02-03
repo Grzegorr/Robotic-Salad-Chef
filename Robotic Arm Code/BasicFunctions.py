@@ -1,20 +1,34 @@
 def gripper_open(ardu):
-    command =120    # query servo position
+    command = "120\n"   # query servo position
     # write position to serial port
+    print("Sending position command to the gripper.")
     ardu.write(str(command).encode())
     # read serial port for arduino echo
+    print("Waiting for answer from arduino.")
     reachedPos = str(ardu.readline())
-    print(reachedPos)
+    print("Reached Position: " + str(reachedPos))
+
+def gripper_grab(ardu):
+    command = "90\n"   # query servo position
+    # write position to serial port
+    print("Sending position command to the gripper.")
+    ardu.write(str(command).encode())
+    # read serial port for arduino echo
+    print("Waiting for answer from arduino.")
+    reachedPos = str(ardu.readline())
+    print("Reached Position: " + str(reachedPos))
 
 def gripper_close(ardu):
-    command =60    # query servo position
+    command = "90\n"   # query servo position
     # write position to serial port
-    ardu.write(str(command).encode())
+    print("Sending position command to the gripper.")
+    ardu.write(command.encode())
     # read serial port for arduino echo
+    print("Waiting for answer from arduino.")
     reachedPos = str(ardu.readline())
     print(reachedPos)
 
-def home_position():
+def home_position(rtde_c):
     PosH = [0.3228078180879545,
             0.4075408368142595,
             0.47817282408694783,

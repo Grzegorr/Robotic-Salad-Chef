@@ -1,5 +1,9 @@
-def home_to_fry_cutter(ardu):
-    home_position()
+from BasicFunctions import *
+
+import time
+
+def home_to_fry_cutter(ardu, rtde_c):
+    home_position(rtde_c)
     posD01 = [0.16151249642469204,
               0.5346051066825475,
               0.25884643903434074,
@@ -57,8 +61,12 @@ def home_to_fry_cutter(ardu):
     rtde_c.moveL(posD06, 0.1, 0.1)
 
     #drop the ingredient
+    print("CANONBALL!!!")
+    time.sleep(2)
     gripper_open(ardu)
+    time.sleep(2)
     gripper_close(ardu)
+    time.sleep(2)
 
     posD05 = [0.21909811395619191,
               0.5659336514887756,
@@ -107,4 +115,4 @@ def home_to_fry_cutter(ardu):
               0.5930586855463937,
               0.6284033511022445]
     rtde_c.moveL(posD01, 0.1, 0.1)
-    home_position()
+    home_position(rtde_c)

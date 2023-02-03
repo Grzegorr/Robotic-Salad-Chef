@@ -1,59 +1,67 @@
 import serial
 import rtde_receive
 import rtde_control
+import time
 
 #### MOST BASIC FUNCTIONS ######
-#gripper_open(ardu)
-#gripper_close(ardu)
-#home_position()
+#gripper_open(ardu)                                    TESTED
+#gripper_close(ardu)                                   TESTED
+#home_position(rtde_c)                                 TESTED
 from BasicFunctions import *
 
 ##### FRY CUTTER OPERATION FUNCTIONS ####
-#fry_open(ardu)
-#fry_close(ardu)
+#fry_open(ardu, rtde_c)                                TESTED
+#fry_close(ardu, rtde_c)                               TESTED
 from FryCutterOpenClose import *
 
 #### INGREDIENT PICKUP ####
+#numbering from down to up
+#oposiit to recipe
 
-#CARROT PICKUP
-#pickup_1_1(ardu)
-#pickup_1_2(ardu)
-#pickup_1_3(ardu)
-#pickup_1_4(ardu)
-from CarrotPickup import *
+#ORANGE PICKUP
+#pickup_1_1(ardu, rtde_c)                              TESTED
+#pickup_1_2(ardu, rtde_c)
+#pickup_1_3(ardu, rtde_c)
+#pickup_1_4(ardu, rtde_c)
+from OrangePickup import *
 
-#APPLE PICKUP
+#BANANA PICKUP
 #pickup_2_1(ardu)
 #pickup_2_2(ardu)
 #pickup_2_3(ardu)
 #pickup_2_4(ardu)
-from ApplePickup import *
+from BananaPickup import *
 
-#BANANA PICKUP
+#APPLE PICKUP
 #pickup_3_1(ardu)
 #pickup_3_2(ardu)
 #pickup_3_3(ardu)
 #pickup_3_4(ardu)
-from BananaPickup import *
+from ApplePickup import *
 
-#BROCCOLI PICKUP
-#pickup_4_1(ardu)
-#pickup_4_2(ardu)
-#pickup_4_3(ardu)
-#pickup_4_4(ardu)
-from BroccoliPickup import *
+#CARROT PICKUP
+#pickup_4_1(ardu, rtde_c)
+#pickup_4_2(ardu, rtde_c)
+#pickup_4_3(ardu, rtde_c)
+#pickup_4_4(ardu, rtde_c)
+from CarrotPickup import *
 
-#ORANGE PICKUP
+#BROCOLLI PICKUP
 #pickup_5_1(ardu)
 #pickup_5_2(ardu)
 #pickup_5_3(ardu)
 #pickup_5_4(ardu)
-from OrangePickup import *
+from BroccoliPickup import *
 
 #### INGREDIENT DELIVERY ####
-#home_to_fry_cutter(ardu)
+#home_to_fry_cutter(ardu)                       TESTED
 # MISSING: home_to_the_bowl(ardu)
 from IngredientDelivery import *
+
+#### INGREDIENT ADDING ####
+#def ingredient_add(ardu, rtde_c, ingredient, slot):
+#def pick_up_ingredient(ardu, rtde_c, ingredient, slot):
+from Ingredient_Add import *
 
 #### RECIPE LEVEL COOKING ####
 
@@ -72,6 +80,8 @@ rtde_r = rtde_receive.RTDEReceiveInterface("169.254.141.189")
 #connect to the arduino
 ardu = serial.Serial('COM7', 9600)
 
+time.sleep(5)
+
 
 #get position in TASK SPACE:
 # pos=rtde_r.getActualTCPPose()
@@ -88,5 +98,15 @@ ardu = serial.Serial('COM7', 9600)
 
 
 if __name__ == '__main__':
-    home_position()
-    fry_close()
+    for n in range(1):
+        gripper_close(ardu)
+        time.sleep(2)
+        gripper_open(ardu)
+        time.sleep(2)
+
+
+
+
+
+
+ingredient_add(ardu, rtde_c, "carrot", 1)

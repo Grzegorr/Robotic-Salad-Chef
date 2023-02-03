@@ -1,6 +1,14 @@
-def fry_open(ardu):
+from BasicFunctions import *
+
+import time
+
+def fry_open(ardu,rtde_c):
+    print("Stating to OPEN FRY CUTTER.")
+    print("closing the gripper.")
     gripper_close(ardu)
-    home_position()
+    time.sleep(1)
+    print("Moving to home position.")
+    home_position(rtde_c)
 
     pospf00 = [0.32563449264740296,
                0.4053858882485881,
@@ -105,16 +113,20 @@ def fry_open(ardu):
                0.9116281937881283]
     rtde_c.moveL(pospf09, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
 # --------------------------------------------------------------
 # ------------------ Closing  the FryCutter ----------------------
 # ..................................................................
 
-def fry_close(ardu):
+def fry_close(ardu,rtde_c):
+    print("Starting to CLOSE THE FRY CUTTER")
+    print("Closing the gripper.")
     gripper_close(ardu)
-    home_position()
+    time.sleep(1)
+    print("Going to home position.")
+    home_position(rtde_c)
 
     # -1.
 
@@ -224,4 +236,4 @@ def fry_close(ardu):
                1.2590017722998332]
     rtde_c.moveL(poscf09, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
