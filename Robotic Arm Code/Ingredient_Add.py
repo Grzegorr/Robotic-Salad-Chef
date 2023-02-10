@@ -11,13 +11,16 @@ from CarrotPickup import *
 from BroccoliPickup import *
 
 def ingredient_add(ardu, rtde_c, ingredient, slot):
-    print("only carrot implemented")
-    if ingredient == "carrot":
+    #print("only carrot implemented")
+    if ingredient == "carrot" or ingredient == "apple" or ingredient == "broccoli":
         fry_open(ardu, rtde_c)
         pick_up_ingredient(ardu, rtde_c, ingredient, slot)
         home_to_fry_cutter(ardu, rtde_c)
         fry_close(ardu, rtde_c)
 
+    if ingredient == "orange" or ingredient == "banana":
+        pick_up_ingredient(ardu, rtde_c, ingredient, slot)
+        home_to_bowl(ardu, rtde_c)
 
 
 def pick_up_ingredient(ardu, rtde_c, ingredient, slot):

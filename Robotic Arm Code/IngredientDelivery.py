@@ -2,6 +2,33 @@ from BasicFunctions import *
 
 import time
 
+def home_to_bowl(ardu, rtde_c):
+    home_position(rtde_c)
+
+    #high above bowl
+    posL = [-0.04543346411430447, 0.554522821407109, 0.44622933725991615, -1.568256319634659, 0.4943283043091056, 0.7294521816049782]
+    rtde_c.moveL(posL, 1, 1)
+
+    #lower down
+    posL = [-0.045436304353225834, 0.5545522835200627, 0.6576848252364663, -1.5682870419927097, 0.4943314496766749, 0.7293848908669491]
+    rtde_c.moveL(posL, 1, 1)
+
+    #time.sleep(2)
+    gripper_open(ardu)
+    time.sleep(0.5)
+    gripper_close(ardu)
+    time.sleep(0.5)
+
+    # high above bowl
+    posL = [-0.04543346411430447, 0.554522821407109, 0.44622933725991615, -1.568256319634659, 0.4943283043091056,
+            0.7294521816049782]
+    rtde_c.moveL(posL, 1, 1)
+
+    home_position(rtde_c)
+
+
+
+
 def home_to_fry_cutter(ardu, rtde_c):
     home_position(rtde_c)
     posD01 = [0.16151249642469204,

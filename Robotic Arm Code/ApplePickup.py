@@ -1,5 +1,8 @@
-def pickup_3_1(ardu):
-    home_position()
+from BasicFunctions import *
+import time
+
+def pickup_3_1(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -34,6 +37,7 @@ def pickup_3_1(ardu):
     rtde_c.moveL(posCaminus3, 0.1, 0.1)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the first ba
     posCa01 = [0.28249966633535073,
@@ -45,6 +49,7 @@ def pickup_3_1(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -62,11 +67,11 @@ def pickup_3_1(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
-def pickup_3_2(ardu):
-    home_position()
+def pickup_3_2(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -99,6 +104,7 @@ def pickup_3_2(ardu):
     rtde_c.moveL(posCaminus3, 0.1, 0.1)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the second ba
     posCa01 = [0.2850671312890474,
@@ -110,6 +116,7 @@ def pickup_3_2(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -127,11 +134,11 @@ def pickup_3_2(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
-def pickup_3_3(ardu):
-    home_position()
+def pickup_3_3(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -165,6 +172,7 @@ def pickup_3_3(ardu):
     rtde_c.moveL(posCaminus3, 0.1, 0.1)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the third ba
     posCa01 = [0.2835383163958049,
@@ -176,6 +184,7 @@ def pickup_3_3(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -193,11 +202,11 @@ def pickup_3_3(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
-def pickup_3_4(ardu):
-    home_position()
+def pickup_3_4(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -247,6 +256,7 @@ def pickup_3_4(ardu):
     rtde_c.moveL(posCaminus4, 0.1, 0.1)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the forth banna
     posCa01 = [0.2869890102430856,
@@ -258,6 +268,7 @@ def pickup_3_4(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCaminus4 = [0.28696046210132725,
                    0.39803052504063163,
@@ -292,4 +303,4 @@ def pickup_3_4(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)

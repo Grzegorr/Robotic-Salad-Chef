@@ -20,37 +20,37 @@ from FryCutterOpenClose import *
 
 #ORANGE PICKUP
 #pickup_1_1(ardu, rtde_c)                              TESTED
-#pickup_1_2(ardu, rtde_c)
-#pickup_1_3(ardu, rtde_c)
-#pickup_1_4(ardu, rtde_c)
+#pickup_1_2(ardu, rtde_c)                              TESTED
+#pickup_1_3(ardu, rtde_c)                              TESTED
+#pickup_1_4(ardu, rtde_c)                              TESTED
 from OrangePickup import *
 
 #BANANA PICKUP
-#pickup_2_1(ardu)
-#pickup_2_2(ardu)
-#pickup_2_3(ardu)
-#pickup_2_4(ardu)
+#pickup_2_1(ardu)                                       TESTED
+#pickup_2_2(ardu)                                       TESTED
+#pickup_2_3(ardu)                                       TESTED
+#pickup_2_4(ardu)                                       TESTED
 from BananaPickup import *
 
 #APPLE PICKUP
-#pickup_3_1(ardu)
-#pickup_3_2(ardu)
-#pickup_3_3(ardu)
-#pickup_3_4(ardu)
+#pickup_3_1(ardu)                                       TESTED
+#pickup_3_2(ardu)                                       TESTED
+#pickup_3_3(ardu)                                       TESTED
+#pickup_3_4(ardu)                                       TESTED
 from ApplePickup import *
 
 #CARROT PICKUP
-#pickup_4_1(ardu, rtde_c)
-#pickup_4_2(ardu, rtde_c)
-#pickup_4_3(ardu, rtde_c)
-#pickup_4_4(ardu, rtde_c)
+#pickup_4_1(ardu, rtde_c)                               TESTED
+#pickup_4_2(ardu, rtde_c)                               TESTED
+#pickup_4_3(ardu, rtde_c)                               TESTED
+#pickup_4_4(ardu, rtde_c)                               TESTED
 from CarrotPickup import *
 
 #BROCOLLI PICKUP
-#pickup_5_1(ardu)
-#pickup_5_2(ardu)
-#pickup_5_3(ardu)
-#pickup_5_4(ardu)
+#pickup_5_1(ardu)                                      TESTED
+#pickup_5_2(ardu)                                      TESTED
+#pickup_5_3(ardu)                                      TESTED
+#pickup_5_4(ardu)                                      TESTED
 from BroccoliPickup import *
 
 #### INGREDIENT DELIVERY ####
@@ -98,15 +98,20 @@ time.sleep(5)
 
 
 if __name__ == '__main__':
-    for n in range(1):
-        gripper_close(ardu)
-        time.sleep(2)
-        gripper_open(ardu)
-        time.sleep(2)
+    #home_position(rtde_c)
+    #Recipe_1(ardu, rtde_c)
+
+    # get position in TASK SPACE:
+    pos=rtde_r.getActualTCPPose()
+    print("Task Space Position:")
+    print(pos)
+
+    # get a position in JOINT SPACE:
+    pos_j = rtde_r.getActualQ()
+    print("Joint Space Position:")
+    print(pos_j)
+
+    home_to_bowl(ardu, rtde_c)
 
 
 
-
-
-
-ingredient_add(ardu, rtde_c, "carrot", 1)

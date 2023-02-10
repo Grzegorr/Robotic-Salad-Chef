@@ -1,5 +1,8 @@
-def pickup_5_1(ardu):
-    home_position()
+from BasicFunctions import *
+import time
+
+def pickup_5_1(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -32,6 +35,7 @@ def pickup_5_1(ardu):
     rtde_c.moveL(posCaminus3, 0.1, 0.1)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the third carrot
     posCa01 = [0.3973483141700734,
@@ -43,6 +47,7 @@ def pickup_5_1(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -60,11 +65,11 @@ def pickup_5_1(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
-def pickup_5_2(ardu):
-    home_position()
+def pickup_5_2(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -97,6 +102,7 @@ def pickup_5_2(ardu):
     rtde_c.moveL(posCaminus3, 0.1, 0.1)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the second brocolli
     posCa01 = [0.4002261261337913,
@@ -108,6 +114,7 @@ def pickup_5_2(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -125,11 +132,11 @@ def pickup_5_2(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
-def pickup_5_3(ardu):
-    home_position()
+def pickup_5_3(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -162,6 +169,7 @@ def pickup_5_3(ardu):
     rtde_c.moveL(posCaminus3, 0.1, 0.1)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the third orange
     posCa01 = [0.4029851430912197,
@@ -173,6 +181,7 @@ def pickup_5_3(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -190,11 +199,11 @@ def pickup_5_3(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
-def pickup_5_4(ardu):
-    home_position()
+def pickup_5_4(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -243,6 +252,7 @@ def pickup_5_4(ardu):
     rtde_c.moveL(posCaminus4, 0.1, 0.1)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the third carrot
     posCa01 = [0.40186506948806644,
@@ -254,6 +264,7 @@ def pickup_5_4(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCaminus4 = [0.40216932219512513,
                    0.40015368800696105,
@@ -288,4 +299,4 @@ def pickup_5_4(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)

@@ -1,4 +1,7 @@
 from BasicFunctions import *
+import time
+
+from BasicFunctions import *
 
 def pickup_1_1(ardu, rtde_c):
     home_position(rtde_c)
@@ -35,6 +38,8 @@ def pickup_1_1(ardu, rtde_c):
     rtde_c.moveL(posCaminus3, 0.1, 0.1)
 
     gripper_open(ardu)
+    time.sleep(1)
+
     # 1 picking the first carrot
     posCa01 = [0.15683071783164027,
                0.2199795226052555,
@@ -45,6 +50,7 @@ def pickup_1_1(ardu, rtde_c):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa02 = [0.1568316876978241,
                0.2199067639991236,
@@ -98,6 +104,7 @@ def pickup_1_2(ardu, rtde_c):
     rtde_c.moveJ(posCaminus2j)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     posCa02 = [0.15260587821980823,
                0.2739946962791212,
@@ -108,6 +115,7 @@ def pickup_1_2(ardu, rtde_c):
     rtde_c.moveL(posCa02, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -155,6 +163,7 @@ def pickup_1_3(ardu,rtde_c):
     rtde_c.moveJ(posCaminus2j)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the third carrot
     posCa01 = [0.14622640717288993,
@@ -166,6 +175,7 @@ def pickup_1_3(ardu,rtde_c):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -224,6 +234,7 @@ def pickup_1_4(ardu, rtde_c):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,

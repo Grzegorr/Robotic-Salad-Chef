@@ -1,5 +1,8 @@
-def pickup_2_1(ardu):
-    home_position()
+from BasicFunctions import *
+import time
+
+def pickup_2_1(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -26,6 +29,7 @@ def pickup_2_1(ardu):
     rtde_c.moveJ(posCaminus2j)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the first Apple
     posCa01 = [0.22328792939324446,
@@ -37,6 +41,7 @@ def pickup_2_1(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -54,11 +59,11 @@ def pickup_2_1(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
-def pickup_2_2(ardu):
-    home_position()
+def pickup_2_2(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -84,6 +89,7 @@ def pickup_2_2(ardu):
     rtde_c.moveJ(posCaminus2j)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the second apple
     posCa01 = [0.21601364693602765,
@@ -95,6 +101,7 @@ def pickup_2_2(ardu):
     rtde_c.moveL(posCa01, 0.1, 0.1)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -113,11 +120,11 @@ def pickup_2_2(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
-def pickup_2_3(ardu):
-    home_position()
+def pickup_2_3(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -172,11 +179,11 @@ def pickup_2_3(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
 
-def pickup_2_4(ardu):
-    home_position()
+def pickup_2_4(ardu, rtde_c):
+    home_position(rtde_c)
 
     posCaminus1 = [0.18258539135209367,
                    0.34237949883831,
@@ -264,5 +271,5 @@ def pickup_2_4(ardu):
 
     rtde_c.moveL(posCa04, 0.1, 0.1)
 
-    home_position()
+    home_position(rtde_c)
 
