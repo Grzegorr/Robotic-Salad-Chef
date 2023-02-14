@@ -27,7 +27,7 @@ clear
 TrainingSalads = ["11", "12", "13", "14", "15", "16", "17", "18"];
 %TrainingSalads = ["1", "2", "3", "4", "5", "6", "7", "8", "11", "12", "13", "14", "15", "16", "17", "18"];
 %PredictedSalad = '12';
-PredictedSalad = '12';
+PredictedSalad = '18';
 [TRANS, EMIT] = HMMEstimation(TrainingSalads);
 
 %Step 2.
@@ -155,8 +155,8 @@ set(gcf,'position',[15,10,650,480])
 %title('Similarity between actions of observed human and known recipes', 'FontSize', 12, 'FontWeight', 'bold')
 %title("Intention Estimation for Recepie 1 with Triple Portion" + newline + "and One Undetected Ingredient", 'FontSize', 12, 'FontWeight', 'bold')
 %title("Intention Estimation for Recepie 1 with Triple Portion" + newline + "and All Apples Added before Carrot", 'FontSize', 12, 'FontWeight', 'bold')
-title("Intention Estimation for Recepie 1 with Triple Portion" + newline + "and Orange Added as Mistake", 'FontSize', 12, 'FontWeight', 'bold')
-plot(Recipe1_cosSim, "LineWidth", 5)
+title("Similarities for Demonstration of New Recipe", 'FontSize', 12, 'FontWeight', 'bold')
+plot(Recipe1_cosSim, "LineWidth", 3)
 plot(Recipe2_cosSim, "LineWidth", 3)
 plot(Recipe3_cosSim, "LineWidth", 3)
 plot(Recipe4_cosSim, "LineWidth", 3)

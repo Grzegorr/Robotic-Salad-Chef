@@ -16,6 +16,15 @@ def home_to_bowl(ardu, rtde_c):
     #time.sleep(2)
     gripper_open(ardu)
     time.sleep(0.5)
+
+    posL = [-0.045436304353225834, 0.5545522835200627, 0.677, -1.5682870419927097, 0.4943314496766749,
+            0.7293848908669491]
+    rtde_c.moveL(posL, 1, 1)
+
+    posL = [-0.045436304353225834, 0.5545522835200627, 0.607, -1.5682870419927097, 0.4943314496766749,
+            0.7293848908669491]
+    rtde_c.moveL(posL, 1, 1)
+
     gripper_close(ardu)
     time.sleep(0.5)
 
@@ -31,20 +40,17 @@ def home_to_bowl(ardu, rtde_c):
 
 def home_to_fry_cutter(ardu, rtde_c):
     home_position(rtde_c)
-    posD01 = [0.16151249642469204,
-              0.5346051066825475,
-              0.25884643903434074,
-              -1.4990040050250124,
-              0.5930586855463937,
-              0.6284033511022445]
-    rtde_c.moveL(posD01, 0.1, 0.1)
+
+    posD01 = [0.16151249642469204, 0.5346051066825475, 0.25884643903434074, -1.4990040050250124, 0.5930586855463937, 0.6284033511022445]
+    rtde_c.moveL(posD01, 0.7, 0.7)
+
     posD02 = [0.25103196461996685,
               0.4467411826285578,
               0.26952671470405415,
               -0.5844514569574193,
               1.5069150246057268,
               -0.7234667888315434]
-    rtde_c.moveL(posD02, 0.1, 0.1)
+    rtde_c.moveL(posD02, 0.7, 0.7)
 
     posD02j = [1.444921612739563,
                -2.0678227583514612,
@@ -60,7 +66,7 @@ def home_to_fry_cutter(ardu, rtde_c):
               -1.7572987124691122,
               0.8371940309248319,
               -1.808736645175887]
-    rtde_c.moveL(posD03, 0.1, 0.1)
+    rtde_c.moveL(posD03, 0.7, 0.7)
 
     posD04 = [0.23828029654069716,
               0.5756584800930565,
@@ -68,7 +74,7 @@ def home_to_fry_cutter(ardu, rtde_c):
               -1.7660311075425632,
               0.7970947859836965,
               -1.8010212468224873]
-    rtde_c.moveL(posD04, 0.1, 0.1)
+    rtde_c.moveL(posD04, 0.7, 0.7)
 
     posD05 = [0.21909811395619191,
               0.5659336514887756,
@@ -76,7 +82,7 @@ def home_to_fry_cutter(ardu, rtde_c):
               -1.752100172781796,
               0.7823539875660221,
               -1.7704106458732871]
-    rtde_c.moveL(posD05, 0.1, 0.1)
+    rtde_c.moveL(posD05, 0.7, 0.7)
 
     # this is drop off point
     posD06 = [0.2055678744441904,
@@ -85,15 +91,13 @@ def home_to_fry_cutter(ardu, rtde_c):
               -1.7573324016245109,
               0.7544657436742626,
               -1.7570559430253785]
-    rtde_c.moveL(posD06, 0.1, 0.1)
+    rtde_c.moveL(posD06, 0.3, 0.3)
 
     #drop the ingredient
     print("CANONBALL!!!")
-    time.sleep(2)
+    time.sleep(1)
     gripper_open(ardu)
-    time.sleep(2)
-    gripper_close(ardu)
-    time.sleep(2)
+    time.sleep(1)
 
     posD05 = [0.21909811395619191,
               0.5659336514887756,
@@ -101,7 +105,10 @@ def home_to_fry_cutter(ardu, rtde_c):
               -1.752100172781796,
               0.7823539875660221,
               -1.7704106458732871]
-    rtde_c.moveL(posD05, 0.1, 0.1)
+    rtde_c.moveL(posD05, 0.5, 0.5)
+
+    gripper_close(ardu)
+    time.sleep(1)
 
     posD04 = [0.23828029654069716,
               0.5756584800930565,
@@ -109,7 +116,7 @@ def home_to_fry_cutter(ardu, rtde_c):
               -1.7660311075425632,
               0.7970947859836965,
               -1.8010212468224873]
-    rtde_c.moveL(posD04, 0.1, 0.1)
+    rtde_c.moveL(posD04, 0.5, 0.5)
 
     posD03 = [0.2552583357978885,
               0.48027367896595063,
@@ -117,7 +124,7 @@ def home_to_fry_cutter(ardu, rtde_c):
               -1.7572987124691122,
               0.8371940309248319,
               -1.808736645175887]
-    rtde_c.moveL(posD03, 0.1, 0.1)
+    rtde_c.moveL(posD03, 0.7, 0.7)
 
     posD02j = [1.444921612739563,
                -2.0678227583514612,
@@ -133,7 +140,7 @@ def home_to_fry_cutter(ardu, rtde_c):
               -0.5844514569574193,
               1.5069150246057268,
               -0.7234667888315434]
-    rtde_c.moveL(posD02, 0.1, 0.1)
+    rtde_c.moveL(posD02, 0.7, 0.7)
 
     posD01 = [0.16151249642469204,
               0.5346051066825475,
@@ -141,5 +148,5 @@ def home_to_fry_cutter(ardu, rtde_c):
               -1.4990040050250124,
               0.5930586855463937,
               0.6284033511022445]
-    rtde_c.moveL(posD01, 0.1, 0.1)
+    rtde_c.moveL(posD01, 0.7, 0.7)
     home_position(rtde_c)

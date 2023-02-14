@@ -18,9 +18,9 @@ def Recipe_3(ardu, rtde_c):
     ingredient_add(ardu, rtde_c, "apple", 2)
 
 def Recipe_4(ardu, rtde_c):
-    ingredient_add(ardu, rtde_c, "orange", 1)
     ingredient_add(ardu, rtde_c, "apple", 1)
     ingredient_add(ardu, rtde_c, "banana", 1)
+    ingredient_add(ardu, rtde_c, "orange", 1)
 
 def Recipe_5(ardu, rtde_c):
     ingredient_add(ardu, rtde_c, "apple", 1)

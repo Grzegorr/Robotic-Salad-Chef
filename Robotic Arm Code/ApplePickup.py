@@ -10,7 +10,7 @@ def pickup_3_1(ardu, rtde_c):
                    -1.4564707803249504,
                    0.6975415335895895,
                    0.5703154832114745]
-    rtde_c.moveL(posCaminus1, 0.1, 0.1)
+    rtde_c.moveL(posCaminus1, 0.7, 0.7)
 
     posCaminus2 = [0.146120374241993,
                    0.2947705615654465,
@@ -18,7 +18,7 @@ def pickup_3_1(ardu, rtde_c):
                    -1.5317463418365234,
                    -0.6669416675807128,
                    -0.5551648224932388]
-    rtde_c.moveL(posCaminus2, 0.1, 0.1)
+    rtde_c.moveL(posCaminus2, 0.7, 0.7)
 
     posCaminus2j = [1.3919613361358643,
                     -1.178955380116598,
@@ -34,19 +34,19 @@ def pickup_3_1(ardu, rtde_c):
                    -1.5352897722799919,
                    -0.6486559034105777,
                    -0.6463374476405168]
-    rtde_c.moveL(posCaminus3, 0.1, 0.1)
+    rtde_c.moveL(posCaminus3, 0.7, 0.7)
 
     gripper_open(ardu)
     time.sleep(1)
 
     # 1 picking the first ba
     posCa01 = [0.28249966633535073,
-               0.2133297945280933,
+               0.225,
                0.7189770720270812,
                -1.5354491877125176,
                -0.648691347262094,
                -0.646197500155386]
-    rtde_c.moveL(posCa01, 0.1, 0.1)
+    rtde_c.moveL(posCa01, 0.3, 0.3)
 
     gripper_close(ardu)
     time.sleep(1)
@@ -57,7 +57,8 @@ def pickup_3_1(ardu, rtde_c):
                -1.4851164489085167,
                -0.677919238739707,
                -0.635198014607513]
-    rtde_c.moveL(posCa03, 0.1, 0.1)
+    rtde_c.moveL(posCa03, 0.3, 0.3)
+
     posCa04 = [0.21139567855487623,
                0.2706275099445283,
                0.5438238597184026,
@@ -65,7 +66,7 @@ def pickup_3_1(ardu, rtde_c):
                -0.6486672057417355,
                -0.6462199428337463]
 
-    rtde_c.moveL(posCa04, 0.1, 0.1)
+    rtde_c.moveL(posCa04, 0.5, 0.5)
 
     home_position(rtde_c)
 
@@ -79,7 +80,7 @@ def pickup_3_2(ardu, rtde_c):
                    -1.4564707803249504,
                    0.6975415335895895,
                    0.5703154832114745]
-    rtde_c.moveL(posCaminus1, 0.1, 0.1)
+    rtde_c.moveL(posCaminus1, 0.7, 0.7)
 
     posCaminus2 = [0.146120374241993,
                    0.2947705615654465,
@@ -87,7 +88,8 @@ def pickup_3_2(ardu, rtde_c):
                    -1.5317463418365234,
                    -0.6669416675807128,
                    -0.5551648224932388]
-    rtde_c.moveL(posCaminus2, 0.1, 0.1)
+    rtde_c.moveL(posCaminus2, 0.7, 0.7)
+
     posCaminus2j = [1.3919613361358643,
                     -1.178955380116598,
                     -2.0018580595599573,
@@ -95,25 +97,26 @@ def pickup_3_2(ardu, rtde_c):
                     1.7977150678634644,
                     -0.7892864386187952]
     rtde_c.moveJ(posCaminus2j)
+
     posCaminus3 = [0.2824692904543662,
-                   0.21327467226277125,
+                   0.28,
                    0.559435873831672,
                    -1.5352897722799919,
                    -0.6486559034105777,
                    -0.6463374476405168]
-    rtde_c.moveL(posCaminus3, 0.1, 0.1)
+    rtde_c.moveL(posCaminus3, 0.7, 0.7)
 
     gripper_open(ardu)
     time.sleep(1)
 
     # 1 picking the second ba
     posCa01 = [0.2850671312890474,
-               0.26518542808635576,
+               0.279,
                0.7192993346646022,
                -1.5353272143057066,
                -0.6486567232359958,
                -0.64635179250213]
-    rtde_c.moveL(posCa01, 0.1, 0.1)
+    rtde_c.moveL(posCa01, 0.3, 0.3)
 
     gripper_close(ardu)
     time.sleep(1)
@@ -124,15 +127,15 @@ def pickup_3_2(ardu, rtde_c):
                -1.4851164489085167,
                -0.677919238739707,
                -0.635198014607513]
-    rtde_c.moveL(posCa03, 0.1, 0.1)
+    rtde_c.moveL(posCa03, 0.7, 0.7)
+
     posCa04 = [0.21139567855487623,
                0.2706275099445283,
                0.5438238597184026,
                -1.535369400769388,
                -0.6486672057417355,
                -0.6462199428337463]
-
-    rtde_c.moveL(posCa04, 0.1, 0.1)
+    rtde_c.moveL(posCa04, 0.7, 0.7)
 
     home_position(rtde_c)
 
@@ -146,7 +149,7 @@ def pickup_3_3(ardu, rtde_c):
                    -1.4564707803249504,
                    0.6975415335895895,
                    0.5703154832114745]
-    rtde_c.moveL(posCaminus1, 0.1, 0.1)
+    rtde_c.moveL(posCaminus1, 0.7, 0.7)
 
     posCaminus2 = [0.146120374241993,
                    0.2947705615654465,
@@ -154,7 +157,8 @@ def pickup_3_3(ardu, rtde_c):
                    -1.5317463418365234,
                    -0.6669416675807128,
                    -0.5551648224932388]
-    rtde_c.moveL(posCaminus2, 0.1, 0.1)
+    rtde_c.moveL(posCaminus2, 0.7, 0.7)
+
     posCaminus2j = [1.3919613361358643,
                     -1.178955380116598,
                     -2.0018580595599573,
@@ -164,24 +168,24 @@ def pickup_3_3(ardu, rtde_c):
     rtde_c.moveJ(posCaminus2j)
 
     posCaminus3 = [0.2824692904543662,
-                   0.21327467226277125,
+                   0.33,
                    0.559435873831672,
                    -1.5352897722799919,
                    -0.6486559034105777,
                    -0.6463374476405168]
-    rtde_c.moveL(posCaminus3, 0.1, 0.1)
+    rtde_c.moveL(posCaminus3, 0.7, 0.7)
 
     gripper_open(ardu)
     time.sleep(1)
 
     # 1 picking the third ba
     posCa01 = [0.2835383163958049,
-               0.32940160534243007,
+               0.333,
                0.7174632375227546,
                -1.5353548421879706,
                -0.648660469027452,
                -0.646228361956756]
-    rtde_c.moveL(posCa01, 0.1, 0.1)
+    rtde_c.moveL(posCa01, 0.3, 0.3)
 
     gripper_close(ardu)
     time.sleep(1)
@@ -192,15 +196,15 @@ def pickup_3_3(ardu, rtde_c):
                -1.4851164489085167,
                -0.677919238739707,
                -0.635198014607513]
-    rtde_c.moveL(posCa03, 0.1, 0.1)
+    rtde_c.moveL(posCa03, 0.4, 0.4)
+
     posCa04 = [0.21139567855487623,
                0.2706275099445283,
                0.5438238597184026,
                -1.535369400769388,
                -0.6486672057417355,
                -0.6462199428337463]
-
-    rtde_c.moveL(posCa04, 0.1, 0.1)
+    rtde_c.moveL(posCa04, 0.7, 0.7)
 
     home_position(rtde_c)
 

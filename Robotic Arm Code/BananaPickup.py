@@ -10,7 +10,7 @@ def pickup_2_1(ardu, rtde_c):
                    -1.4564707803249504,
                    0.6975415335895895,
                    0.5703154832114745]
-    rtde_c.moveL(posCaminus1, 0.1, 0.1)
+    rtde_c.moveL(posCaminus1, 0.7, 0.7)
 
     posCaminus2 = [0.146120374241993,
                    0.2947705615654465,
@@ -18,7 +18,7 @@ def pickup_2_1(ardu, rtde_c):
                    -1.5317463418365234,
                    -0.6669416675807128,
                    -0.5551648224932388]
-    rtde_c.moveL(posCaminus2, 0.1, 0.1)
+    rtde_c.moveL(posCaminus2, 0.7, 0.7)
 
     posCaminus2j = [1.3919613361358643,
                     -1.178955380116598,
@@ -33,12 +33,12 @@ def pickup_2_1(ardu, rtde_c):
 
     # 1 picking the first Apple
     posCa01 = [0.22328792939324446,
-               0.2195648530157714,
+               0.225,
                0.7185321029019914,
                -1.5353252574987593,
                -0.6487770313338376,
                -0.6462232297144029]
-    rtde_c.moveL(posCa01, 0.1, 0.1)
+    rtde_c.moveL(posCa01, 0.3, 0.3)
 
     gripper_close(ardu)
     time.sleep(1)
@@ -49,15 +49,15 @@ def pickup_2_1(ardu, rtde_c):
                -1.4851164489085167,
                -0.677919238739707,
                -0.635198014607513]
-    rtde_c.moveL(posCa03, 0.1, 0.1)
+    rtde_c.moveL(posCa03, 0.4, 0.4)
+
     posCa04 = [0.21139567855487623,
                0.2706275099445283,
                0.5438238597184026,
                -1.535369400769388,
                -0.6486672057417355,
                -0.6462199428337463]
-
-    rtde_c.moveL(posCa04, 0.1, 0.1)
+    rtde_c.moveL(posCa04, 0.5, 0.5)
 
     home_position(rtde_c)
 
@@ -71,7 +71,7 @@ def pickup_2_2(ardu, rtde_c):
                    -1.4564707803249504,
                    0.6975415335895895,
                    0.5703154832114745]
-    rtde_c.moveL(posCaminus1, 0.1, 0.1)
+    rtde_c.moveL(posCaminus1, 0.7, 0.7)
 
     posCaminus2 = [0.146120374241993,
                    0.2947705615654465,
@@ -79,7 +79,8 @@ def pickup_2_2(ardu, rtde_c):
                    -1.5317463418365234,
                    -0.6669416675807128,
                    -0.5551648224932388]
-    rtde_c.moveL(posCaminus2, 0.1, 0.1)
+    rtde_c.moveL(posCaminus2, 0.7, 0.7)
+
     posCaminus2j = [1.3919613361358643,
                     -1.178955380116598,
                     -2.0018580595599573,
@@ -93,12 +94,12 @@ def pickup_2_2(ardu, rtde_c):
 
     # 1 picking the second apple
     posCa01 = [0.21601364693602765,
-               0.2698816637900554,
-               0.7202811338415102,
+               0.275,
+               0.717,
                -1.5353730594920678,
                -0.6486630860571535,
                -0.6461438035114184]
-    rtde_c.moveL(posCa01, 0.1, 0.1)
+    rtde_c.moveL(posCa01, 0.3, 0.3)
 
     gripper_close(ardu)
     time.sleep(1)
@@ -109,7 +110,7 @@ def pickup_2_2(ardu, rtde_c):
                -1.4851164489085167,
                -0.677919238739707,
                -0.635198014607513]
-    rtde_c.moveL(posCa03, 0.1, 0.1)
+    rtde_c.moveL(posCa03, 0.4, 0.4)
 
     posCa04 = [0.21139567855487623,
                0.2706275099445283,
@@ -118,7 +119,7 @@ def pickup_2_2(ardu, rtde_c):
                -0.6486672057417355,
                -0.6462199428337463]
 
-    rtde_c.moveL(posCa04, 0.1, 0.1)
+    rtde_c.moveL(posCa04, 0.5, 0.5)
 
     home_position(rtde_c)
 
@@ -132,7 +133,7 @@ def pickup_2_3(ardu, rtde_c):
                    -1.4564707803249504,
                    0.6975415335895895,
                    0.5703154832114745]
-    rtde_c.moveL(posCaminus1, 0.1, 0.1)
+    rtde_c.moveL(posCaminus1, 0.7, 0.7)
 
     posCaminus2 = [0.146120374241993,
                    0.2947705615654465,
@@ -140,7 +141,7 @@ def pickup_2_3(ardu, rtde_c):
                    -1.5317463418365234,
                    -0.6669416675807128,
                    -0.5551648224932388]
-    rtde_c.moveL(posCaminus2, 0.1, 0.1)
+    rtde_c.moveL(posCaminus2, 0.7, 0.7)
 
     posCaminus2j = [1.3919613361358643,
                     -1.178955380116598,
@@ -151,6 +152,7 @@ def pickup_2_3(ardu, rtde_c):
     rtde_c.moveJ(posCaminus2j)
 
     gripper_open(ardu)
+    time.sleep(1)
 
     # 1 picking the third apple
     posCa01 = [0.21883318392659795,
@@ -159,9 +161,10 @@ def pickup_2_3(ardu, rtde_c):
                -1.535260003663283,
                -0.6487154719975169,
                -0.6463075703876497]
-    rtde_c.moveL(posCa01, 0.1, 0.1)
+    rtde_c.moveL(posCa01, 0.3, 0.3)
 
     gripper_close(ardu)
+    time.sleep(1)
 
     posCa03 = [0.1568316876978241,
                0.2199067639991236,
@@ -169,15 +172,15 @@ def pickup_2_3(ardu, rtde_c):
                -1.4851164489085167,
                -0.677919238739707,
                -0.635198014607513]
-    rtde_c.moveL(posCa03, 0.1, 0.1)
+    rtde_c.moveL(posCa03, 0.4, 0.4)
+
     posCa04 = [0.21139567855487623,
                0.2706275099445283,
                0.5438238597184026,
                -1.535369400769388,
                -0.6486672057417355,
                -0.6462199428337463]
-
-    rtde_c.moveL(posCa04, 0.1, 0.1)
+    rtde_c.moveL(posCa04, 0.7, 0.7)
 
     home_position(rtde_c)
 

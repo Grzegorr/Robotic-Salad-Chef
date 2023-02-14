@@ -99,7 +99,7 @@ time.sleep(5)
 
 if __name__ == '__main__':
     #home_position(rtde_c)
-    #Recipe_1(ardu, rtde_c)
+    Recipe_5(ardu, rtde_c)
 
     # get position in TASK SPACE:
     pos=rtde_r.getActualTCPPose()
@@ -111,7 +111,12 @@ if __name__ == '__main__':
     print("Joint Space Position:")
     print(pos_j)
 
-    home_to_bowl(ardu, rtde_c)
+    #home_to_bowl(ardu, rtde_c)
+    #fry_open(ardu, rtde_c)
+    #fry_close(ardu, rtde_c)
+    #home_to_fry_cutter(ardu, rtde_c)
+
+    #pickup_2_1(ardu, rtde_c)
 
 
 

@@ -10,7 +10,7 @@ if True:
     YOLO = torch.hub.load('ultralytics/yolov5', 'yolov5m', pretrained=True)
 
     # Videos
-    names = ['GrandFinale_OACACAC'] ###put one name only, sorry
+    names = ['FinalSalad21'] ###put one name only, sorry
     processed_video_name = names[0] + "_processed.mp4"
     results_YOLO = []
     results_YOLO_JSON = []
